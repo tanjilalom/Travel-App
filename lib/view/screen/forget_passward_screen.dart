@@ -8,7 +8,6 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         leading: TextButton(
@@ -36,20 +35,13 @@ class ForgetPasswordScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               CustomTextfield(
-                  controller: TextEditingController(),
-                  isBorder: true,
-                  borderColor: Colors.black,
+                title: '',
+                controller: TextEditingController(),
+                /*controller: TextEditingController(),
                   hint: 'Enter your Email Address',
-                  hintFontSize: 14,
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return '*Required';
-                    }
-                  }),
+                  hintFontSize: 14,*/
+              ),
               CustomButton(
-                isBorder: false,
-                onTap: () {},
-                buttonStyle: CustomButtonStyle.one,
                 buttonColor: Color(0xff0d6efd),
                 width: 335,
                 height: 56,

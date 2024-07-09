@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/model/popular_places_model.dart';
 
 class PopularPlacesScreen extends StatelessWidget {
@@ -52,8 +53,7 @@ class PopularPlacesScreen extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: InkWell(
-                      onTap: () {},
-                      //onTap: () => Get.to(Vegetables()),
+                      onTap: () => Get.snackbar('hello', 'hn'),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),

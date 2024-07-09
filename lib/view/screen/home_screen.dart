@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travelapp/view/widget/image_slider_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,8 +53,8 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomCarousel(
-              imagePaths: ['assets/1.jpg', 'assets/2.jpg', 'assets/3.jpg'],)
+            /*CustomCarousel(
+              imagePaths: ['assets/1.jpg', 'assets/2.jpg', 'assets/3.jpg'],)*/
           ],
         ),
       ),

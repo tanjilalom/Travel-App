@@ -9,11 +9,9 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     TextEditingController controller = TextEditingController();
     final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
     bool isTrack = false;
-
 
     return Scaffold(
       //extendBodyBehindAppBar: true,
@@ -45,61 +43,18 @@ class SignupScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
                 CustomTextfield(
-                    controller: TextEditingController(),
-                    isBorder: true,
-                    borderColor: Colors.black,
-                    hint: 'Enter your Name',
-                    hintFontSize: 14,
-                    validator: (String? value) {
-                      if (value!.isEmpty) {
-                        return '*Required';
-                      }
-                    }),
-                CustomTextfield(
-                    controller: TextEditingController(),
-                    isBorder: true,
-                    borderColor: Colors.black,
-                    hint: 'Enter your Email Address',
-                    hintFontSize: 14,
-                    validator: (String? value) {
-                      if (value!.isEmpty) {
-                        return '*Required';
-                      }
-                    }),
-                CustomTextfield(
+                  title: '',
                   controller: TextEditingController(),
-                  isBorder: true,
-                  borderColor: Colors.black,
-                  isPasswordField: true,
-                  isRequired: true,
-                  isSuffixIcon: true,
-                  icon: Icons.password,
-                  inputFontSize: 16,
-                  hint: 'Enter your Password',
-                  hintFontSize: 14,
-                  liveErrorMessage: 'Enter The Correct Password ',
-                  isLiveErrorTrack: true,
-                  isError: isTrack,
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return '*Required';
-                    }
-                  },
+                ),
+                CustomTextfield(
+                  title: '',
+                  controller: TextEditingController(),
+                ),
+                CustomTextfield(
+                  title: '',
+                  controller: TextEditingController(),
                 ),
                 CustomButton(
-                  isBorder: false,
-                  onTap: () {
-                    if (_formkey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        backgroundColor: Colors.red,
-                        content: Text("Something went wrong"),
-                        duration: Duration(seconds: 2),
-                        behavior: SnackBarBehavior.floating,
-                        action: SnackBarAction(label: "OK", onPressed: () {}),
-                      ));
-                    }
-                  },
-                  buttonStyle: CustomButtonStyle.one,
                   buttonColor: Color(0xff0d6efd),
                   width: 335,
                   height: 56,
@@ -113,14 +68,17 @@ class SignupScreen extends StatelessWidget {
                     Text(
                       'Already have an account',
                       style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignInScreen()));
                       },
                       child: Text(
                         'Sign in',
@@ -148,15 +106,30 @@ class SignupScreen extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
-                        child: Image.asset('assets/1.jpg', fit: BoxFit.cover, height: 44, width: 44,),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
-                        child: Image.asset('assets/1.jpg', fit: BoxFit.cover, height: 44, width: 44,),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
-                        child: Image.asset('assets/1.jpg', fit: BoxFit.cover, height: 44, width: 44,),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
                       ),
                     ],
                   ),
