@@ -44,14 +44,14 @@ class SignInScreen extends StatelessWidget {
                 height: 55,
               ),
               CustomTextfield(
-                title: '',
+                title: 'Type Your Name here',
                 controller: controller,
               ),
               SizedBox(
                 height: 24,
               ),
               CustomTextfield(
-                title: '',
+                title: 'Type Your Email here',
                 controller: controller,
               ),
               SizedBox(

@@ -11,7 +11,6 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
     final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-    bool isTrack = false;
 
     return Scaffold(
       //extendBodyBehindAppBar: true,
@@ -29,7 +28,6 @@ class SignupScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Center(
           child: Form(
-            key: _formkey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,11 +41,11 @@ class SignupScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
                 CustomTextfield(
-                  title: '',
+                  title: 'Type Your Name here',
                   controller: TextEditingController(),
                 ),
                 CustomTextfield(
-                  title: '',
+                  title: 'Type Your Email here',
                   controller: TextEditingController(),
                 ),
                 CustomTextfield(
