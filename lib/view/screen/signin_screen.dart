@@ -12,7 +12,6 @@ class SignInScreen extends StatelessWidget {
     TextEditingController controller = TextEditingController();
 
     return Scaffold(
-      //extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: TextButton(
           onPressed: () {},
@@ -23,127 +22,132 @@ class SignInScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Sign in now',
-                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Please sign in to continue our app',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 55,
-              ),
-              CustomTextfield(
-                title: 'Type Your Name here',
-                controller: controller,
-              ),
-              SizedBox(
-                height: 24,
-              ),
-              CustomTextfield(
-                title: 'Type Your Email here',
-                controller: controller,
-              ),
-              SizedBox(
-                height: 72,
-              ),
-              CustomButton(
-                buttonColor: Colors.blue,
-                width: 335,
-                height: 56,
-                radius: 12,
-                title: 'Sign in',
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Center(
+            child: Form(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Don’t have an account?',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                    'Sign in now',
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(
-                    width: 10,
+                    height: 10,
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignupScreen()));
-                    },
-                    child: Text(
-                      'Sign up',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff0d6efd),
+                  Text(
+                    'Please sign in to continue our app',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(
+                    height: 55,
+                  ),
+                  CustomTextfield(
+                    title: 'Type Your Name here',
+                    controller: controller,
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  CustomTextfield(
+                    title: 'Type Your Email here',
+                    controller: controller,
+                  ),
+                  SizedBox(
+                    height: 72,
+                  ),
+                  CustomButton(
+                    buttonColor: Color(0xff0d6efd),
+                    width: 335,
+                    height: 56,
+                    radius: 12,
+                    title: 'Sign in',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+            
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don’t have an account?',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                       ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignupScreen()));
+                        },
+                        child: Text(
+                          'Sign up',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff0d6efd),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Or connect',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 44,
+                          width: 44,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Or connect',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(
-                height: 80,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.asset(
-                      'assets/1.jpg',
-                      fit: BoxFit.cover,
-                      height: 44,
-                      width: 44,
-                    ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.asset(
-                      'assets/1.jpg',
-                      fit: BoxFit.cover,
-                      height: 44,
-                      width: 44,
-                    ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.asset(
-                      'assets/1.jpg',
-                      fit: BoxFit.cover,
-                      height: 44,
-                      width: 44,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
         ),
       ),
