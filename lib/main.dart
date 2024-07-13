@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travelapp/view/screen/forget_passward_screen.dart';
 import 'package:travelapp/view/screen/home_screen.dart';
+import 'package:travelapp/view/screen/popular_package_screen.dart';
 import 'package:travelapp/view/screen/popular_places_screen.dart';
 import 'package:travelapp/view/screen/profile_screen.dart';
 import 'package:travelapp/view/screen/schedule_screen.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProfileScreen(),
+      home: PopularPackageScreen(),
     );
   }
 }

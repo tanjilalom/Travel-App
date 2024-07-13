@@ -60,14 +60,20 @@ class ProfileScreen extends StatelessWidget {
                     color: Color(0xff7d848d)),
               ),
               SizedBox(
-                height: 30,
+                height: 60,
               ),
               Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(16)
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300,
+                      blurRadius: 5,
+                      blurStyle: BlurStyle.outer
+                    ),
+                  ],
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,26 +108,31 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Expanded(
-                child: Container(
-                  
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.grey
-                  ),
-                  child: ListView.builder(
-                      itemCount: profile.length,
-                    itemBuilder: (context, index){
-                      var itemname = profile[index];
-                      return ListTile(
-                        leading: Icon(itemname.icon),
-                        title: Text(itemname.name),
-                        trailing: Icon(itemname.icon2),
-                      );
-                    },
-                  
-                  )
+              Container(
+                height: 330,
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.shade300,
+                        blurRadius: 5,
+                        blurStyle: BlurStyle.outer
+                    ),
+                  ],
                 ),
+                child: ListView.builder(
+                  itemCount: profile.length,
+                  itemBuilder: (context, index){
+                    var itemname = profile[index];
+                    return ListTile(
+                      leading: Icon(itemname.icon),
+                      title: Text(itemname.name),
+                      trailing: Icon(itemname.icon2),
+                      minTileHeight: 60,
+                    );
+                  },
+                )
               )
             ],
           ),

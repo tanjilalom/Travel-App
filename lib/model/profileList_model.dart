@@ -13,9 +13,9 @@ class profileList {
 }
 
 List<profileList> profile = [
-  profileList(icon: Icons.person, name: 'Profile', icon2: Icons.kayaking),
-  profileList(icon: Icons.person, name: 'Bookmarked', icon2: Icons.kayaking),
-  profileList(icon: Icons.person, name: 'Previous Trips', icon2: Icons.kayaking),
-  profileList(icon: Icons.person, name: 'Settings', icon2: Icons.kayaking),
-  profileList(icon: Icons.person, name: 'Version', icon2: Icons.kayaking),
+  profileList(icon: Icons.person, name: 'Profile', icon2: Icons.keyboard_arrow_right),
+  profileList(icon: Icons.bookmark_border_outlined, name: 'Bookmarked', icon2: Icons.keyboard_arrow_right),
+  profileList(icon: Icons.airplane_ticket_outlined, name: 'Previous Trips', icon2: Icons.keyboard_arrow_right),
+  profileList(icon: Icons.settings, name: 'Settings', icon2: Icons.keyboard_arrow_right),
+  profileList(icon: Icons.manage_search_outlined, name: 'Version', icon2: Icons.keyboard_arrow_right),
 ];
