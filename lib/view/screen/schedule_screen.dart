@@ -19,12 +19,12 @@ class ScheduleScreen extends StatelessWidget {
         centerTitle: true,
         leading: TextButton(
           onPressed: () {},
-          child: Icon(CupertinoIcons.back),
+          child: Icon(CupertinoIcons.back,),
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xfff7f7f9),
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -33,7 +33,7 @@ class ScheduleScreen extends StatelessWidget {
             EasyDateTimeLine(
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {},
-              headerProps: EasyHeaderProps(),
+
             ),
             SizedBox(height: 30,),
             Row(
@@ -82,13 +82,19 @@ class ScheduleScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    itemname.date,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13,
-                                      color: Color(0xff7D848D),
-                                    ),
+                                  Row(
+                                    children: [
+                                      Icon(CupertinoIcons.calendar, size: 16,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        itemname.date,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13,
+                                          color: Color(0xff7D848D),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(
                                     height: 5,
@@ -101,13 +107,19 @@ class ScheduleScreen extends StatelessWidget {
                                       color: Color(0xff1B1E28),
                                     ),
                                   ),
-                                  Text(
-                                    itemname.address,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13,
-                                      color: Color(0xff7D848D),
-                                    ),
+                                  Row(
+                                    children: [
+                                      Icon(Icons.location_on_outlined, size: 16,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        itemname.address,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13,
+                                          color: Color(0xff7D848D),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(
                                     height: 18,

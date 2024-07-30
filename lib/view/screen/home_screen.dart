@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,20 +13,44 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  padding: EdgeInsets.all(5),
                   height: 44,
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade100,
+                          blurRadius: 0,
+                          blurStyle: BlurStyle.outer),
+                    ],
+                  ),
                   child: Row(
                     children: [
-                      CircleAvatar(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: Image.asset('assets/1.jpg', fit: BoxFit.cover, height: 44, width: 44,),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          'assets/1.jpg',
+                          fit: BoxFit.cover,
+                          height: 35,
+                          width: 35,
                         ),
                       ),
-                      Text(' Tanjil', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),)
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        ' Tanjil',
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500),
+                      )
                     ],
                   ),
                 ),
@@ -33,23 +58,69 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {},
                   child: Icon(CupertinoIcons.bell),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xfff7f7f9),
+                    backgroundColor: Colors.grey.shade100,
                   ),
                 ),
               ],
             ),
-            Container(
-              width: 300,
-              height: 100,
-              child: Text('Explore the Beautiful world!', style: TextStyle(fontSize: 38, fontWeight: FontWeight.w300),),
+            SizedBox(
+              height: 20,
             ),
-            SizedBox(height: 30,),
+            Container(
+              width: double.infinity,
+              height: 100,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Explore the       ',
+                      style: TextStyle(
+                        fontSize: 38,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                        fontFamily: 'SF_UI_Display',
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Beautiful ',
+                      style: TextStyle(
+                        fontSize: 42,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'SF_UI_Display',
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'world!',
+                      style: TextStyle(
+                        fontSize: 42,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.orange,
+                        fontFamily: 'SF_UI_Display',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Best Destination'),
-                  Text('View all'),
+                  Text(
+                    'Best Destination',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    'View all',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.blue),
+                  ),
                 ],
               ),
             ),

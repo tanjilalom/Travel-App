@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travelapp/model/profileList_model.dart';
+import 'package:travelapp/view/screen/editprofile_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -24,7 +25,9 @@ class ProfileScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => EditprofileScreen()));
+              },
               child: Icon(Icons.edit),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xfff7f7f9),
@@ -48,6 +51,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 100,
                 ),
               ),
+              SizedBox(height: 12,),
               Text(
                 'Tanjil Alom',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -132,8 +136,8 @@ class ProfileScreen extends StatelessWidget {
                       minTileHeight: 60,
                     );
                   },
-                )
-              )
+                ),
+              ),
             ],
           ),
         ),
