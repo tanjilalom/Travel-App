@@ -124,8 +124,69 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            /*CustomCarousel(
-              imagePaths: ['assets/1.jpg', 'assets/2.jpg', 'assets/3.jpg'],)*/
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              height: 384,
+              child: ListView.builder(
+                //separatorBuilder: (BuildContext context, int index) => Divider(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Container(
+                      height: 384,
+                      width: 268,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: SizedBox.fromSize(
+                                child: Image.asset('assets/1.jpg',
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Niladri Reservoir',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.location_on_outlined,
+                                size: 18,
+                                color: Color(0xff7D848D),
+                              ),
+                              Text(
+                                'Tekergat, Sunamgnj',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xff7D848D),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
