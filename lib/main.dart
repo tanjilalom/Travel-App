@@ -46,6 +46,7 @@ class BottomNavBarScreen extends StatefulWidget {
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   var _currentindex = 0;
   final pages = [
+    //PopularPackageScreen(),
     HomeScreen(),
     ScheduleScreen(),
     SearchScreen(),
