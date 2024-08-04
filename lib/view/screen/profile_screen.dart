@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/model/profileList_model.dart';
 import 'package:travelapp/view/screen/editprofile_screen.dart';
 
@@ -13,11 +14,9 @@ class ProfileScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TextButton(
-              onPressed: () {},
-              child: Icon(CupertinoIcons.back),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xfff7f7f9),
+            InkWell(
+              onTap: () => Get.back(),
+              child: Icon(CupertinoIcons.back,
               ),
             ),
             Text(

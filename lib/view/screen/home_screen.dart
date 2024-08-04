@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travelapp/view/screen/popular_package_screen.dart';
+import 'package:travelapp/view/screen/popular_places_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -114,18 +118,23 @@ class HomeScreen extends StatelessWidget {
                     'Best Destination',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    'View all',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.blue),
+                  InkWell(
+                    //onTap: ()=> Get.to(PopularPackageScreen()),
+                    onTap: ()=> Navigator.push(
+                      context, CupertinoPageRoute(builder: (context) => PopularPlacesScreen(),)),
+                    child: Text(
+                      'View all',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.blue),
+                    ),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 32,
             ),
             Container(
               height: 384,

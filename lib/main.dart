@@ -49,7 +49,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     //PopularPackageScreen(),
     HomeScreen(),
     ScheduleScreen(),
-    SearchScreen(),
+    PopularPackageScreen(),
     ProfileScreen(),
   ];
 
@@ -70,9 +70,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
               backgroundColor: Colors.white,
               icon: Icon(CupertinoIcons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.calendar), label:'Calender'),
+              icon: Icon(Icons.calendar_today_outlined), label:'Calender'),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.search), label:'Search'),
+              icon: Icon(Icons.hotel_outlined), label:'Packages'),
           BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.person), label:'Profile'),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
 
@@ -10,11 +11,9 @@ class ForgetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: TextButton(
-          onPressed: () {},
-          child: Icon(CupertinoIcons.back),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xfff7f7f9),
+        leading: InkWell(
+          onTap: () => Get.back(),
+          child: Icon(CupertinoIcons.back,
           ),
         ),
         backgroundColor: Colors.transparent,

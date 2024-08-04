@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EditprofileScreen extends StatefulWidget {
   const EditprofileScreen({super.key});
@@ -13,7 +14,6 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -22,11 +22,9 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
               'Edit Profile',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            TextButton(
-              onPressed: () {},
-              child: Icon(Icons.edit),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xfff7f7f9),
+            InkWell(
+              onTap: () => Get.back(),
+              child: Icon(CupertinoIcons.back,
               ),
             ),
           ],

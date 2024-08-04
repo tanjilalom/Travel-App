@@ -15,11 +15,9 @@ class PopularPlacesScreen extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        leading: TextButton(
-          onPressed: () {},
-          child: Icon(CupertinoIcons.back),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xfff7f7f9),
+        leading: InkWell(
+          onTap: () => Get.back(),
+          child: Icon(CupertinoIcons.back,
           ),
         ),
         backgroundColor: Colors.transparent,
