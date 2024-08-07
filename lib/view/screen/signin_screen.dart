@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/view/screen/signup_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
@@ -9,12 +10,13 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
+    TextEditingController controller1 = TextEditingController();
+    TextEditingController controller2 = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
         leading: TextButton(
-          onPressed: () {},
+          onPressed: () => Get.back(),
           child: Icon(CupertinoIcons.back),
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xfff7f7f9),
@@ -47,26 +49,30 @@ class SignInScreen extends StatelessWidget {
                   ),
                   CustomTextfield(
                     title: 'Type Your Name here',
-                    controller: controller,
+                    controller: controller1,
                   ),
                   SizedBox(
                     height: 24,
                   ),
                   CustomTextfield(
                     title: 'Type Your Email here',
-                    controller: controller,
+                    controller: controller2,
                   ),
                   SizedBox(
                     height: 72,
                   ),
-                  CustomButton(
-                    buttonColor: Color(0xff0d6efd),
-                    width: 335,
-                    height: 56,
-                    radius: 12,
-                    title: 'Sign in',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
+                  InkWell(
+                    onTap: () => Get.snackbar('Clicked', 'SignIn Button Clicked') ,
+                    child: CustomButton(
+                      buttonColor: Color(0xff0d6efd),
+                      width: 335,
+                      height: 56,
+                      radius: 12,
+                      title: 'Sign in',
+                      fontColor: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
             
                   SizedBox(
@@ -86,7 +92,7 @@ class SignInScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              CupertinoPageRoute(
                                   builder: (context) => SignupScreen()));
                         },
                         child: Text(
@@ -119,7 +125,7 @@ class SignInScreen extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
-                          'assets/1.jpg',
+                          'assets/icons/facebook.png',
                           fit: BoxFit.cover,
                           height: 44,
                           width: 44,
@@ -128,7 +134,7 @@ class SignInScreen extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
-                          'assets/1.jpg',
+                          'assets/icons/instagram.png',
                           fit: BoxFit.cover,
                           height: 44,
                           width: 44,
@@ -137,7 +143,7 @@ class SignInScreen extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
-                          'assets/1.jpg',
+                          'assets/icons/twitter.png',
                           fit: BoxFit.cover,
                           height: 44,
                           width: 44,

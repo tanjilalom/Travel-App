@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:travelapp/main.dart';
 import 'package:travelapp/view/screen/home_screen.dart';
+import 'package:travelapp/view/screen/onboard_screen/onboard_page1.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(Duration(seconds: 5), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => BottomNavBarScreen()));
+          .pushReplacement(MaterialPageRoute(builder: (_) => OnboardPage1()));
     });
   }
 

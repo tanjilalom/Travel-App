@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
     required this.buttonColor,
     this.fontSize,
     this.fontWeight,
+    this.fontColor,
   });
 
   final double? height;
@@ -21,12 +22,11 @@ class CustomButton extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final Color buttonColor;
+  final Color? fontColor;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
+    return Container(
         height: height,
         width: width,
         child: Center(
@@ -35,6 +35,7 @@ class CustomButton extends StatelessWidget {
             style: TextStyle(
               fontSize: fontSize,
               fontWeight: fontWeight,
+              color: fontColor,
             ),
           ),
         ),
@@ -42,7 +43,6 @@ class CustomButton extends StatelessWidget {
           color: buttonColor,
           borderRadius: BorderRadius.circular(radius!),
         ),
-      ),
     );
   }
 }

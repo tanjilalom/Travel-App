@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:travelapp/view/screen/signin_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
@@ -9,13 +10,17 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
+    TextEditingController controller1 = TextEditingController();
+    TextEditingController controller2 = TextEditingController();
+    TextEditingController controller3 = TextEditingController();
+
+    bool isVisible = false;
 
     return Scaffold(
       //extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: TextButton(
-          onPressed: () {},
+          onPressed: () => Get.back(),
           child: Icon(CupertinoIcons.back),
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xfff7f7f9),
@@ -46,21 +51,21 @@ class SignupScreen extends StatelessWidget {
                 ),
                 CustomTextfield(
                   title: 'Type Your Name here',
-                  controller: TextEditingController(),
+                  controller: controller1,
                 ),
                 SizedBox(
                   height: 24,
                 ),
                 CustomTextfield(
                   title: 'Type Your Email here',
-                  controller: TextEditingController(),
+                  controller: controller2,
                 ),
                 SizedBox(
                   height: 24,
                 ),
                 CustomTextfield(
                   title: 'Type your Password',
-                  controller: TextEditingController(),
+                  controller: controller3,
                   icon: CupertinoIcons.eye_slash_fill,
                   helperText: 'Password must be 8 character',
                 ),
@@ -72,11 +77,12 @@ class SignupScreen extends StatelessWidget {
                   width: 335,
                   height: 56,
                   title: 'Sign in',
+                  fontColor: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
                 SizedBox(
-                  height:40,
+                  height: 40,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -90,12 +96,13 @@ class SignupScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.push(
+                      onTap: () => Get.back(),
+                      /*{
+                        Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => SignInScreen()));
-                      },
+                      },*/
                       child: Text(
                         'Sign in',
                         style: TextStyle(
@@ -120,41 +127,37 @@ class SignupScreen extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                Container(
-                  width: 172,
-                  height: 44,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/1.jpg',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(40),
+                      child: Image.asset(
+                        'assets/icons/facebook.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/1.jpg',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(40),
+                      child: Image.asset(
+                        'assets/icons/instagram.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/1.jpg',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(40),
+                      child: Image.asset(
+                        'assets/icons/twitter.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
