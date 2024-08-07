@@ -15,11 +15,7 @@ class PopularPackageScreen extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        leading: InkWell(
-          onTap: () => Get.back(),
-          child: Icon(CupertinoIcons.back,
-          ),
-        ),
+        leading: SizedBox(),
         backgroundColor: Colors.transparent,
       ),
       body: Padding(

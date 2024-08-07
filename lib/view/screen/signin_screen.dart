@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:travelapp/main.dart';
 import 'package:travelapp/view/screen/home_screen.dart';
 import 'package:travelapp/view/screen/signup_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
@@ -66,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                     onTap: (){
                       Get.snackbar('Clicked', 'SignIn Button Clicked');
                       Navigator.push(
-                          context, CupertinoPageRoute(builder: (context) => HomeScreen()),);
+                          context, CupertinoPageRoute(builder: (context) => BottomNavBarScreen()),);
                     },
                     child: CustomButton(
                       buttonColor: Color(0xff0d6efd),

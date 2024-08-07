@@ -51,7 +51,7 @@ class PopularPlacesScreen extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: InkWell(
-                      onTap: () => Get.snackbar('hello', 'hn'),
+                      onTap: () => Get.snackbar('Clicked', itemname.name),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),

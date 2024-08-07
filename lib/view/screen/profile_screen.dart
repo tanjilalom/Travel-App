@@ -11,29 +11,23 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            InkWell(
-              onTap: () => Get.back(),
-              child: Icon(CupertinoIcons.back,
-              ),
-            ),
-            Text(
-              'Profile',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => EditprofileScreen()));
-              },
-              child: Icon(Icons.edit),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xfff7f7f9),
-              ),
-            ),
-          ],
+        leading: SizedBox(),
+        centerTitle: true,
+        title: Text(
+          'Profile',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) => EditprofileScreen()));
+            },
+            child: Icon(Icons.edit),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xfff7f7f9),
+            ),
+          ),
+        ],
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
