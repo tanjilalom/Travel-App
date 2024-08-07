@@ -72,14 +72,17 @@ class SignupScreen extends StatelessWidget {
                 SizedBox(
                   height: 55,
                 ),
-                CustomButton(
-                  buttonColor: Color(0xff0d6efd),
-                  width: 335,
-                  height: 56,
-                  title: 'Sign in',
-                  fontColor: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                InkWell(
+                  onTap: ()=> Get.snackbar('Clicked', 'Go to SignIn page to enter the App', snackPosition: SnackPosition.BOTTOM),
+                  child: CustomButton(
+                    buttonColor: Color(0xff0d6efd),
+                    width: 335,
+                    height: 56,
+                    title: 'Sign up',
+                    fontColor: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 SizedBox(
                   height: 40,
