@@ -26,17 +26,26 @@ class ScheduleScreen extends StatelessWidget {
             EasyDateTimeLine(
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {},
-
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('My Schedule', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                Text('View all', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
+                Text(
+                  'My Schedule',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  'View all',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                ),
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: schedule.length,
@@ -46,7 +55,7 @@ class ScheduleScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
                       onTap: () {
-                       /* Navigator.push(
+                        /* Navigator.push(
                             context,
                             CupertinoPageRoute(
                                 builder: (context) => ));*/
@@ -77,8 +86,13 @@ class ScheduleScreen extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Icon(CupertinoIcons.calendar, size: 16,),
-                                      SizedBox(width: 5,),
+                                      Icon(
+                                        CupertinoIcons.calendar,
+                                        size: 16,
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
                                       Text(
                                         itemname.date,
                                         style: TextStyle(
@@ -102,8 +116,13 @@ class ScheduleScreen extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      Icon(Icons.location_on_outlined, size: 16,),
-                                      SizedBox(width: 5,),
+                                      Icon(
+                                        Icons.location_on_outlined,
+                                        size: 16,
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
                                       Text(
                                         itemname.address,
                                         style: TextStyle(
@@ -117,7 +136,6 @@ class ScheduleScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 18,
                                   ),
-
                                 ],
                               ),
                             ),
