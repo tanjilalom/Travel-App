@@ -13,7 +13,8 @@ class ForgetPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         leading: InkWell(
           onTap: () => Get.back(),
-          child: Icon(CupertinoIcons.back,
+          child: Icon(
+            CupertinoIcons.back,
           ),
         ),
         backgroundColor: Colors.transparent,

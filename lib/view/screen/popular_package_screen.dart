@@ -154,7 +154,8 @@ class PopularPackageScreen extends StatelessWidget {
                                             Container(
                                               width: 50,
                                               child: Stack(
-                                                alignment: AlignmentDirectional.topStart,
+                                                alignment: AlignmentDirectional
+                                                    .topStart,
                                                 children: [
                                                   Positioned(
                                                     child: ClipRRect(

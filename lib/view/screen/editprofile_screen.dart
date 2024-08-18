@@ -24,7 +24,8 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
             ),
             InkWell(
               onTap: () => Get.back(),
-              child: Icon(CupertinoIcons.back,
+              child: Icon(
+                CupertinoIcons.back,
               ),
             ),
           ],
@@ -45,7 +46,9 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
                   width: 100,
                 ),
               ),
-              SizedBox(height: 12,),
+              SizedBox(
+                height: 12,
+              ),
               Text(
                 'Tanjil Alom',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -60,7 +63,6 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
               SizedBox(
                 height: 60,
               ),
-
             ],
           ),
         ),

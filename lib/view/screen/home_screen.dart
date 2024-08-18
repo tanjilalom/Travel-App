@@ -120,8 +120,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   InkWell(
                     //onTap: ()=> Get.to(PopularPackageScreen()),
-                    onTap: ()=> Navigator.push(
-                      context, CupertinoPageRoute(builder: (context) => PopularPlacesScreen(),)),
+                    onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => PopularPlacesScreen(),
+                        )),
                     child: Text(
                       'View all',
                       style: TextStyle(
