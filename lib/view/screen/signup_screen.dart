@@ -73,7 +73,10 @@ class SignupScreen extends StatelessWidget {
                   height: 55,
                 ),
                 InkWell(
-                  onTap: ()=> Get.snackbar('Clicked', 'Go to SignIn page to enter the App',),
+                  onTap: () => Get.snackbar(
+                    'Clicked',
+                    'Go to SignIn page to enter the App',
+                  ),
                   child: CustomButton(
                     buttonColor: Color(0xff0d6efd),
                     width: 335,

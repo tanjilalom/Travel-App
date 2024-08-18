@@ -64,10 +64,13 @@ class SignInScreen extends StatelessWidget {
                     height: 72,
                   ),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Get.snackbar('Clicked', 'SignIn Button Clicked');
                       Navigator.push(
-                          context, CupertinoPageRoute(builder: (context) => BottomNavBarScreen()),);
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => BottomNavBarScreen()),
+                      );
                     },
                     child: CustomButton(
                       buttonColor: Color(0xff0d6efd),
@@ -80,7 +83,6 @@ class SignInScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-            
                   SizedBox(
                     height: 50,
                   ),
@@ -89,7 +91,8 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Don’t have an account?',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       SizedBox(
                         width: 10,

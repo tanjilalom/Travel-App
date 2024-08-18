@@ -7,8 +7,10 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Places',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
+        title: Text(
+          'Search Places',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        ),
         centerTitle: true,
       ),
       body: SearchBar(
