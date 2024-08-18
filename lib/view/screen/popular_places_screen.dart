@@ -17,7 +17,8 @@ class PopularPlacesScreen extends StatelessWidget {
         centerTitle: true,
         leading: InkWell(
           onTap: () => Get.back(),
-          child: Icon(CupertinoIcons.back,
+          child: Icon(
+            CupertinoIcons.back,
           ),
         ),
         backgroundColor: Colors.transparent,
