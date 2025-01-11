@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 100,
               child: RichText(
