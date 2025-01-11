@@ -19,7 +19,7 @@ class OnboardPage1 extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
                   ),
@@ -35,7 +35,7 @@ class OnboardPage1 extends StatelessWidget {
                   child: InkWell(
                     onTap: ()=> Navigator.push(
                         context, CupertinoPageRoute(builder: (context) => SignInScreen(),)),
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                           fontSize: 18,
@@ -62,7 +62,7 @@ class OnboardPage1 extends StatelessWidget {
                         fontSize: 30,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        fontFamily: 'SF_UI_Display',
+
                       ),
                     ),
                     TextSpan(
@@ -71,7 +71,7 @@ class OnboardPage1 extends StatelessWidget {
                         fontSize: 30,
                         fontWeight: FontWeight.w700,
                         color: Colors.orange,
-                        fontFamily: 'SF_UI_Display',
+
                       ),
                     ),
                   ],
@@ -99,13 +99,13 @@ class OnboardPage1 extends StatelessWidget {
               ),
               child: InkWell(
                 onTap: ()=> Navigator.push(
-                    context, CupertinoPageRoute(builder: (context) => OnboardPage2(),)),
-                child: Text('Get Started',
+                    context, CupertinoPageRoute(builder: (context) => const OnboardPage2(),)),
+                child: const Text('Get Started',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
-                    fontFamily: 'SF_UI_Display',
+
                   ),),
               ),
             )

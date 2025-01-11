@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 38,
                         fontWeight: FontWeight.w300,
                         color: Colors.black,
-                        fontFamily: 'SF_UI_Display',
+
                       ),
                     ),
                     TextSpan(
@@ -90,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 42,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'SF_UI_Display',
+
                         color: Colors.black,
                       ),
                     ),
@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 42,
                         fontWeight: FontWeight.w600,
                         color: Colors.orange,
-                        fontFamily: 'SF_UI_Display',
+
                       ),
                     ),
                   ],

@@ -13,7 +13,7 @@ class PopularPackageScreen extends StatelessWidget {
         title: const Text(
           'Popular Package',
           style: TextStyle(
-            fontFamily: 'SF_UI_Display',
+
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -29,7 +29,7 @@ class PopularPackageScreen extends StatelessWidget {
             const Text(
               'All Popular Trip Package',
               style: TextStyle(
-                fontFamily: 'SF_UI_Display',
+
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: Color(0xff2D0C57),
@@ -90,7 +90,7 @@ class PopularPackageScreen extends StatelessWidget {
                                           Text(
                                             package.name,
                                             style: const TextStyle(
-                                              fontFamily: 'SF_UI_Display',
+
                                               fontWeight: FontWeight.w600,
                                               fontSize: 16,
                                               color: Color(0xff1B1E28),
@@ -114,7 +114,7 @@ class PopularPackageScreen extends StatelessWidget {
                                               Text(
                                                 '16 July-28 July',
                                                 style: TextStyle(
-                                                  fontFamily: 'SF_UI_Display',
+
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
@@ -150,7 +150,7 @@ class PopularPackageScreen extends StatelessWidget {
                                               Text(
                                                 package.rating.toString(),
                                                 style: const TextStyle(
-                                                  fontFamily: 'SF_UI_Display',
+
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
@@ -219,7 +219,7 @@ class PopularPackageScreen extends StatelessWidget {
                                               const Text(
                                                 '24 Person Joined',
                                                 style: TextStyle(
-                                                  fontFamily: 'SF_UI_Display',
+
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
@@ -247,7 +247,7 @@ class PopularPackageScreen extends StatelessWidget {
                                               child: Text(
                                                 "\$" + package.price.toString(),
                                                 style: const TextStyle(
-                                                    fontFamily: 'SF_UI_Display',
+
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w600,
                                                     color: Colors.white),

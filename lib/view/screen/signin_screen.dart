@@ -34,7 +34,7 @@ class SignInScreen extends StatelessWidget {
                 const Text(
                   'Sign in now',
                   style: TextStyle(
-                    fontFamily: 'SF_UI_Display',
+
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
                   ),
@@ -43,7 +43,7 @@ class SignInScreen extends StatelessWidget {
                 const Text(
                   'Please sign in to continue our app',
                   style: TextStyle(
-                    fontFamily: 'SF_UI_Display',
+
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   ),
@@ -87,7 +87,7 @@ class SignInScreen extends StatelessWidget {
                     const Text(
                       'Don’t have an account?',
                       style: TextStyle(
-                        fontFamily: 'SF_UI_Display',
+
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -105,7 +105,7 @@ class SignInScreen extends StatelessWidget {
                       child: const Text(
                         'Sign up',
                         style: TextStyle(
-                          fontFamily: 'SF_UI_Display',
+
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff0d6efd),
@@ -118,7 +118,7 @@ class SignInScreen extends StatelessWidget {
                 const Text(
                   'Or connect',
                   style: TextStyle(
-                    fontFamily: 'SF_UI_Display',
+
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),

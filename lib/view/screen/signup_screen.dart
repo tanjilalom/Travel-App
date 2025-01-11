@@ -33,7 +33,7 @@ class SignupScreen extends StatelessWidget {
                 const Text(
                   'Sign up now',
                   style: TextStyle(
-                    fontFamily: 'SF_UI_Display',
+
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
                   ),
@@ -42,7 +42,7 @@ class SignupScreen extends StatelessWidget {
                 const Text(
                   'Please fill the details and create an account',
                   style: TextStyle(
-                    fontFamily: 'SF_UI_Display',
+
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   ),
@@ -96,7 +96,7 @@ class SignupScreen extends StatelessWidget {
                   children: [
                     const Text(
                       'Already have an account?',
-                      style: TextStyle(fontFamily: 'SF_UI_Display',
+                      style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -107,7 +107,7 @@ class SignupScreen extends StatelessWidget {
                       child: const Text(
                         'Sign in',
                         style: TextStyle(
-                          fontFamily: 'SF_UI_Display',
+
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff0d6efd),
@@ -121,7 +121,7 @@ class SignupScreen extends StatelessWidget {
                 // Or Connect
                 const Text(
                   'Or connect',
-                  style: TextStyle(fontFamily: 'SF_UI_Display',
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),

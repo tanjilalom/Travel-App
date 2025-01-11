@@ -27,25 +27,27 @@ class ScheduleScreen extends StatelessWidget {
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {},
             ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
+            const SizedBox(height: 30),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'My Schedule',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Text(
                   'View all',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: schedule.length,
@@ -54,13 +56,7 @@ class ScheduleScreen extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
-                      onTap: () {
-                        /* Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => ));*/
-                      },
-                      //() => Get.to(Veginfo()),
+                      onTap: () {},
                       child: Container(
                         child: Row(
                           children: [
@@ -76,7 +72,7 @@ class ScheduleScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                 top: 22,
                                 left: 12.0,
                               ),
