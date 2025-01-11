@@ -12,156 +12,148 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller1 = TextEditingController();
-    TextEditingController controller2 = TextEditingController();
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
-        leading: TextButton(
+        leading: IconButton(
           onPressed: () => Get.back(),
-          child: Icon(CupertinoIcons.back),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xfff7f7f9),
-          ),
+          icon: Icon(CupertinoIcons.back, color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Center(
-            child: Form(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Sign in now',
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text(
+                  'Sign in now',
+                  style: TextStyle(
+                    fontFamily: 'SF_UI_Display',
+                    fontSize: 26,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Please sign in to continue our app',
+                  style: TextStyle(
+                    fontFamily: 'SF_UI_Display',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
                   ),
-                  Text(
-                    'Please sign in to continue our app',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+                const SizedBox(height: 55),
+                CustomTextfield(
+                  title: 'Type Your Name here',
+                  controller: nameController,
+                ),
+                const SizedBox(height: 24),
+                CustomTextfield(
+                  title: 'Type Your Email here',
+                  controller: emailController,
+                ),
+                const SizedBox(height: 72),
+                InkWell(
+                  onTap: () {
+                    Get.snackbar('Clicked', 'SignIn Button Clicked');
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => BottomNavBarScreen(),
+                      ),
+                    );
+                  },
+                  child: CustomButton(
+                    buttonColor: const Color(0xff0d6efd),
+                    width: double.infinity,
+                    height: 56,
+                    radius: 12,
+                    title: 'Sign in',
+                    fontColor: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 55,
-                  ),
-                  CustomTextfield(
-                    title: 'Type Your Name here',
-                    controller: controller1,
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  CustomTextfield(
-                    title: 'Type Your Email here',
-                    controller: controller2,
-                  ),
-                  SizedBox(
-                    height: 72,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Get.snackbar('Clicked', 'SignIn Button Clicked');
-                      Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => BottomNavBarScreen()),
-                      );
-                    },
-                    child: CustomButton(
-                      buttonColor: Color(0xff0d6efd),
-                      width: 335,
-                      height: 56,
-                      radius: 12,
-                      title: 'Sign in',
-                      fontColor: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                ),
+                const SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Don’t have an account?',
+                      style: TextStyle(
+                        fontFamily: 'SF_UI_Display',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Don’t have an account?',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => SignupScreen()));
-                        },
-                        child: Text(
-                          'Sign up',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xff0d6efd),
+                    const SizedBox(width: 10),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => SignupScreen(),
                           ),
+                        );
+                      },
+                      child: const Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontFamily: 'SF_UI_Display',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff0d6efd),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Or connect',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
                     ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Or connect',
+                  style: TextStyle(
+                    fontFamily: 'SF_UI_Display',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/icons/facebook.png',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                ),
+                const SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/icons/google.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/icons/instagram.png',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                    ),
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/icons/instagram.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          'assets/icons/twitter.png',
-                          fit: BoxFit.cover,
-                          height: 44,
-                          width: 44,
-                        ),
+                    ),
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/icons/twitter.png',
+                        fit: BoxFit.cover,
+                        height: 44,
+                        width: 44,
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),

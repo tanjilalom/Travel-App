@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:travelapp/view/screen/signin_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
 
@@ -10,23 +9,19 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller1 = TextEditingController();
-    TextEditingController controller2 = TextEditingController();
-    TextEditingController controller3 = TextEditingController();
-
-    bool isVisible = false;
+    // Controllers for the text fields
+    TextEditingController nameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
-      //extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: TextButton(
+        leading: IconButton(
           onPressed: () => Get.back(),
-          child: Icon(CupertinoIcons.back),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xfff7f7f9),
-          ),
+          icon: const Icon(CupertinoIcons.back, color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -35,50 +30,56 @@ class SignupScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Sign up now',
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontFamily: 'SF_UI_Display',
+                    fontSize: 26,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                SizedBox(
-                  height: 10,
+                const SizedBox(height: 10),
+                const Text(
+                  'Please fill the details and create an account',
+                  style: TextStyle(
+                    fontFamily: 'SF_UI_Display',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-                Text(
-                  'Please fill the details and create account',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                ),
-                SizedBox(
-                  height: 55,
-                ),
+                const SizedBox(height: 55),
+
+                // Name Field
                 CustomTextfield(
                   title: 'Type Your Name here',
-                  controller: controller1,
+                  controller: nameController,
                 ),
-                SizedBox(
-                  height: 24,
-                ),
+                const SizedBox(height: 24),
+
+                // Email Field
                 CustomTextfield(
                   title: 'Type Your Email here',
-                  controller: controller2,
+                  controller: emailController,
                 ),
-                SizedBox(
-                  height: 24,
-                ),
+                const SizedBox(height: 24),
+
+                // Password Field
                 CustomTextfield(
                   title: 'Type your Password',
-                  controller: controller3,
+                  controller: passwordController,
                   icon: CupertinoIcons.eye_slash_fill,
-                  helperText: 'Password must be 8 character',
+                  helperText: 'Password must be 8 characters',
                 ),
-                SizedBox(
-                  height: 55,
-                ),
+                const SizedBox(height: 55),
+
+                // Sign Up Button
                 InkWell(
                   onTap: () => Get.snackbar(
                     'Clicked',
-                    'Go to SignIn page to enter the App',
+                    'Go to Sign In page to enter the app',
                   ),
                   child: CustomButton(
-                    buttonColor: Color(0xff0d6efd),
+                    buttonColor: const Color(0xff0d6efd),
                     width: 335,
                     height: 56,
                     title: 'Sign up',
@@ -87,31 +88,26 @@ class SignupScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
+
+                // Already Have an Account
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Already have an account',
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                    const Text(
+                      'Already have an account?',
+                      style: TextStyle(fontFamily: 'SF_UI_Display',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
+                    const SizedBox(width: 10),
                     InkWell(
                       onTap: () => Get.back(),
-                      /*{
-                        Navigator.pushReplacement(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => SignInScreen()));
-                      },*/
-                      child: Text(
+                      child: const Text(
                         'Sign in',
                         style: TextStyle(
+                          fontFamily: 'SF_UI_Display',
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff0d6efd),
@@ -120,55 +116,43 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
+                const SizedBox(height: 20),
+
+                // Or Connect
+                const Text(
                   'Or connect',
-                  style: TextStyle(
+                  style: TextStyle(fontFamily: 'SF_UI_Display',
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
+                const SizedBox(height: 50),
+
+                // Social Media Icons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40),
-                      child: Image.asset(
-                        'assets/icons/facebook.png',
-                        fit: BoxFit.cover,
-                        height: 44,
-                        width: 44,
-                      ),
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40),
-                      child: Image.asset(
-                        'assets/icons/instagram.png',
-                        fit: BoxFit.cover,
-                        height: 44,
-                        width: 44,
-                      ),
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(40),
-                      child: Image.asset(
-                        'assets/icons/twitter.png',
-                        fit: BoxFit.cover,
-                        height: 44,
-                        width: 44,
-                      ),
-                    ),
+                    _buildSocialIcon('assets/icons/google.png'),
+                    _buildSocialIcon('assets/icons/instagram.png'),
+                    _buildSocialIcon('assets/icons/twitter.png'),
                   ],
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSocialIcon(String assetPath) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(40),
+      child: Image.asset(
+        assetPath,
+        fit: BoxFit.cover,
+        height: 44,
+        width: 44,
       ),
     );
   }

@@ -12,12 +12,12 @@ class ScheduleScreen extends StatelessWidget {
     var _focusDate = DateTime(2024);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Schedule',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        leading: SizedBox(),
+        backgroundColor: Colors.transparent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
