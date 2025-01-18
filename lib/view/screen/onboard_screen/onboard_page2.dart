@@ -81,10 +81,10 @@ class OnboardPage2 extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Container(
+            const SizedBox(
               height: 72,
               width: 303,
-              child: const Text(
+              child: Text(
                 'At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world',
               ),
             ),

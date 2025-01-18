@@ -5,7 +5,7 @@ import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
 
 class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +78,8 @@ class SignupScreen extends StatelessWidget {
                     'Clicked',
                     'Go to Sign In page to enter the app',
                   ),
-                  child: CustomButton(
-                    buttonColor: const Color(0xff0d6efd),
+                  child: const CustomButton(
+                    buttonColor: Color(0xff0d6efd),
                     width: 335,
                     height: 56,
                     title: 'Sign up',

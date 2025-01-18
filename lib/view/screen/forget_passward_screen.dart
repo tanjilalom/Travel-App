@@ -41,8 +41,8 @@ class ForgetPasswordScreen extends StatelessWidget {
                   hint: 'Enter your Email Address',
                   hintFontSize: 14,*/
               ),
-              CustomButton(
-                buttonColor: const Color(0xff0d6efd),
+              const CustomButton(
+                buttonColor: Color(0xff0d6efd),
                 width: 335,
                 height: 56,
                 title: 'Sign in',

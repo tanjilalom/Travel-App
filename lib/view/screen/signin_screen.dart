@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travelapp/main.dart';
-import 'package:travelapp/view/screen/home_screen.dart';
 import 'package:travelapp/view/screen/signup_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
@@ -65,12 +64,12 @@ class SignInScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       CupertinoPageRoute(
-                        builder: (context) => BottomNavBarScreen(),
+                        builder: (context) => const BottomNavBarScreen(),
                       ),
                     );
                   },
-                  child: CustomButton(
-                    buttonColor: const Color(0xff0d6efd),
+                  child: const CustomButton(
+                    buttonColor: Color(0xff0d6efd),
                     width: double.infinity,
                     height: 56,
                     radius: 12,
