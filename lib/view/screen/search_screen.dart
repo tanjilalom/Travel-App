@@ -7,14 +7,14 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Search Places',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
       body: SearchBar(
-        leading: Icon(Icons.search),
+        leading: const Icon(Icons.search),
         onTapOutside: (event) => FocusScope.of(context).unfocus(),
       ),
     );

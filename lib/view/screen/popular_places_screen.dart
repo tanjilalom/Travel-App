@@ -10,25 +10,25 @@ class PopularPlacesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Popular Places',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         leading: InkWell(
           onTap: () => Get.back(),
-          child: Icon(
+          child: const Icon(
             CupertinoIcons.back,
           ),
         ),
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'All Popular Places',
               style: TextStyle(
                 fontSize: 20,
@@ -36,7 +36,7 @@ class PopularPlacesScreen extends StatelessWidget {
                 color: Color(0xff2D0C57),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -50,15 +50,15 @@ class PopularPlacesScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = places[index];
                   return Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: InkWell(
                       onTap: () => Get.snackbar('Clicked', itemname.name),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                           border: Border.all(
-                            color: Color(0xffD9D0E3),
+                            color: const Color(0xffD9D0E3),
                           ),
                         ),
                         child: Column(
@@ -66,7 +66,7 @@ class PopularPlacesScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ClipRRect(
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                   Radius.circular(10),
                                 ),
                                 // Image border
@@ -79,37 +79,42 @@ class PopularPlacesScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 16.0, right: 10.0),
+                              padding: const EdgeInsets.only(
+                                  left: 12.0, right: 12.0),
                               child: Text(
                                 itemname.name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 16.0, right: 10.0),
+                              padding: const EdgeInsets.only(
+                                  left: 12.0, right: 12.0),
                               child: Text(
                                 itemname.address.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                     color: Color(0xff7d848d)),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Padding(
-                              padding: EdgeInsets.only(left: 16.0, right: 10.0),
+                              padding: const EdgeInsets.only(
+                                  left: 12.0, right: 12.0),
                               child: Text(
-                                '\$' + itemname.price.toString() + '/Person',
-                                style: TextStyle(
+                                '\$${itemname.price}/Person',
+                                style: const TextStyle(
                                     fontSize: 12, fontWeight: FontWeight.w400),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                           ],

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:travelapp/model/popular_package_model.dart';
 
 class PopularPackageScreen extends StatelessWidget {
@@ -13,7 +11,6 @@ class PopularPackageScreen extends StatelessWidget {
         title: const Text(
           'Popular Package',
           style: TextStyle(
-
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -29,7 +26,6 @@ class PopularPackageScreen extends StatelessWidget {
             const Text(
               'All Popular Trip Package',
               style: TextStyle(
-
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: Color(0xff2D0C57),
@@ -46,8 +42,7 @@ class PopularPackageScreen extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
-                      onTap: () {
-                      },
+                      onTap: () {},
                       child: Container(
                         height: 140,
                         width: 335,
@@ -62,7 +57,7 @@ class PopularPackageScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
-                              flex : 1,
+                              flex: 1,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
                                 child: Image.asset(
@@ -76,13 +71,14 @@ class PopularPackageScreen extends StatelessWidget {
                             Expanded(
                               flex: 3,
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 15, right: 15),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
-                                      flex : 6,
+                                      flex: 6,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -90,17 +86,15 @@ class PopularPackageScreen extends StatelessWidget {
                                           Text(
                                             package.name,
                                             style: const TextStyle(
-
                                               fontWeight: FontWeight.w600,
                                               fontSize: 16,
                                               color: Color(0xff1B1E28),
                                             ),
                                             maxLines: 1,
-                                            overflow: TextOverflow.ellipsis, // Truncates overflowed text
+                                            overflow: TextOverflow
+                                                .ellipsis, // Truncates overflowed text
                                           ),
-                                          const SizedBox(
-                                            height: 8
-                                          ),
+                                          const SizedBox(height: 8),
                                           const Row(
                                             children: [
                                               Icon(
@@ -108,19 +102,17 @@ class PopularPackageScreen extends StatelessWidget {
                                                 size: 16,
                                                 color: Color(0xff7D848D),
                                               ),
-                                              SizedBox(
-                                                width: 5
-                                              ),
+                                              SizedBox(width: 5),
                                               Text(
                                                 '16 July-28 July',
                                                 style: TextStyle(
-
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
                                                 ),
                                                 maxLines: 1,
-                                                overflow: TextOverflow.ellipsis, // Truncates overflowed text
+                                                overflow: TextOverflow
+                                                    .ellipsis, // Truncates overflowed text
                                               ),
                                             ],
                                           ),
@@ -150,7 +142,6 @@ class PopularPackageScreen extends StatelessWidget {
                                               Text(
                                                 package.rating.toString(),
                                                 style: const TextStyle(
-
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
@@ -166,14 +157,15 @@ class PopularPackageScreen extends StatelessWidget {
                                               SizedBox(
                                                 width: 50,
                                                 child: Stack(
-                                                  alignment: AlignmentDirectional
-                                                      .topStart,
+                                                  alignment:
+                                                      AlignmentDirectional
+                                                          .topStart,
                                                   children: [
                                                     Positioned(
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                50),
+                                                            BorderRadius
+                                                                .circular(50),
                                                         child: Image.asset(
                                                           'assets/1.jpg',
                                                           fit: BoxFit.cover,
@@ -186,8 +178,8 @@ class PopularPackageScreen extends StatelessWidget {
                                                       left: 12,
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                50),
+                                                            BorderRadius
+                                                                .circular(50),
                                                         child: Image.asset(
                                                           'assets/2.jpg',
                                                           fit: BoxFit.cover,
@@ -200,8 +192,8 @@ class PopularPackageScreen extends StatelessWidget {
                                                       left: 24,
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                50),
+                                                            BorderRadius
+                                                                .circular(50),
                                                         child: Image.asset(
                                                           'assets/3.jpg',
                                                           fit: BoxFit.cover,
@@ -213,13 +205,10 @@ class PopularPackageScreen extends StatelessWidget {
                                                   ],
                                                 ),
                                               ),
-                                              const SizedBox(
-                                                width: 8
-                                              ),
+                                              const SizedBox(width: 8),
                                               const Text(
                                                 '24 Person Joined',
                                                 style: TextStyle(
-
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 13,
                                                   color: Color(0xff7D848D),
@@ -231,7 +220,7 @@ class PopularPackageScreen extends StatelessWidget {
                                       ),
                                     ),
                                     Expanded(
-                                      flex : 2,
+                                      flex: 2,
                                       child: Align(
                                         // heightFactor: 15.0,
                                         alignment: AlignmentDirectional.topEnd,
@@ -241,17 +230,16 @@ class PopularPackageScreen extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             color: Colors.blue,
                                             borderRadius:
-                                            BorderRadius.circular(8),
+                                                BorderRadius.circular(8),
                                           ),
                                           child: Center(
                                               child: Text(
-                                                "\$" + package.price.toString(),
-                                                style: const TextStyle(
-
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Colors.white),
-                                              )),
+                                            "\$${package.price}",
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.white),
+                                          )),
                                         ),
                                       ),
                                     )

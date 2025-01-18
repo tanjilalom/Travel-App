@@ -17,14 +17,14 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(),
-            Text(
+            const SizedBox(),
+            const Text(
               'Edit Profile',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             InkWell(
               onTap: () => Get.back(),
-              child: Icon(
+              child: const Icon(
                 CupertinoIcons.back,
               ),
             ),
@@ -46,21 +46,21 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
                   width: 100,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
-              Text(
+              const Text(
                 'Tanjil Alom',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
               ),
-              Text(
+              const Text(
                 'Change Profile Picture',
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff0D6EFD)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
             ],

@@ -25,7 +25,7 @@ class SignupScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +70,7 @@ class SignupScreen extends StatelessWidget {
                   icon: CupertinoIcons.eye_slash_fill,
                   helperText: 'Password must be 8 characters',
                 ),
-                const SizedBox(height: 55),
+                const SizedBox(height: 50),
 
                 // Sign Up Button
                 InkWell(

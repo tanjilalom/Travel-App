@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:travelapp/view/screen/home_screen.dart';
 import 'package:travelapp/view/screen/onboard_screen/onboard_page3.dart';
-import 'package:travelapp/view/screen/popular_places_screen.dart';
 import 'package:travelapp/view/screen/signin_screen.dart';
 
 class OnboardPage2 extends StatelessWidget {
@@ -19,7 +16,7 @@ class OnboardPage2 extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
                   ),
@@ -33,9 +30,12 @@ class OnboardPage2 extends StatelessWidget {
                   top: 30,
                   right: 20,
                   child: InkWell(
-                    onTap: ()=> Navigator.push(
-                        context, CupertinoPageRoute(builder: (context) => SignInScreen(),)),
-                    child: Text(
+                    onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const SignInScreen(),
+                        )),
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                           fontSize: 18,
@@ -46,15 +46,15 @@ class OnboardPage2 extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Container(
+            SizedBox(
               width: 309,
               height: 72,
               child: RichText(
                 textAlign: TextAlign.center,
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
                     TextSpan(
                       text: 'It’s a big world out there go ',
@@ -78,35 +78,42 @@ class OnboardPage2 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
               height: 72,
               width: 303,
-              child: Text(
+              child: const Text(
                 'At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world',
               ),
             ),
-            SizedBox(height: 100,),
+            const SizedBox(
+              height: 50,
+            ),
             Container(
               height: 56,
               width: 335,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Color(0xff0D6EFD),
+                color: const Color(0xff0D6EFD),
               ),
               child: InkWell(
-                onTap: ()=> Navigator.push(
-                    context, CupertinoPageRoute(builder: (context) => OnboardPage3(),)),
-                child: Text('Get Started',
+                onTap: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const OnboardPage3(),
+                    )),
+                child: const Text(
+                  'Get Started',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                     fontFamily: 'SF_UI_Display',
-                  ),),
+                  ),
+                ),
               ),
             )
           ],

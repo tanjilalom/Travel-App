@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 enum CustomButtonStyle { one, two }
 
 class CustomButton extends StatelessWidget {
-  CustomButton({
+  const CustomButton({
     super.key,
     this.height = 40,
     this.width = 120,
@@ -27,22 +27,22 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: height,
-        width: width,
-        child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              color: fontColor,
-            ),
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(radius!),
+      ),
+      child: Center(
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: fontColor,
           ),
         ),
-        decoration: BoxDecoration(
-          color: buttonColor,
-          borderRadius: BorderRadius.circular(radius!),
-        ),
+      ),
     );
   }
 }

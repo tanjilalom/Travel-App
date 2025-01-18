@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:travelapp/view/screen/popular_package_screen.dart';
 import 'package:travelapp/view/screen/popular_places_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,14 +13,14 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: 44,
                   width: 110,
                   decoration: BoxDecoration(
@@ -47,10 +43,10 @@ class HomeScreen extends StatelessWidget {
                           width: 35,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
-                      Text(
+                      const Text(
                         ' Tanjil',
                         style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w500),
@@ -60,21 +56,21 @@ class HomeScreen extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Icon(CupertinoIcons.bell),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.grey.shade100,
                   ),
+                  child: const Icon(CupertinoIcons.bell),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
               width: double.infinity,
               height: 100,
               child: RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
                     TextSpan(
                       text: 'Explore the       ',
@@ -82,7 +78,6 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 38,
                         fontWeight: FontWeight.w300,
                         color: Colors.black,
-
                       ),
                     ),
                     TextSpan(
@@ -90,7 +85,6 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 42,
                         fontWeight: FontWeight.w600,
-
                         color: Colors.black,
                       ),
                     ),
@@ -100,46 +94,43 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 42,
                         fontWeight: FontWeight.w600,
                         color: Colors.orange,
-
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Best Destination',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Best Destination',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+                InkWell(
+                  //onTap: ()=> Get.to(PopularPackageScreen()),
+                  onTap: () => Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => const PopularPlacesScreen(),
+                      )),
+                  child: const Text(
+                    'View all',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.blue),
                   ),
-                  InkWell(
-                    //onTap: ()=> Get.to(PopularPackageScreen()),
-                    onTap: () => Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                          builder: (context) => PopularPlacesScreen(),
-                        )),
-                    child: Text(
-                      'View all',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.blue),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
-            Container(
+            SizedBox(
               height: 384,
               child: ListView.builder(
                 //separatorBuilder: (BuildContext context, int index) => Divider(),
@@ -148,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Container(
+                    child: SizedBox(
                       height: 384,
                       width: 268,
                       child: Column(
@@ -163,10 +154,10 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             'Niladri Reservoir',
                             style: TextStyle(
                               fontSize: 18,
@@ -175,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                               letterSpacing: 0.5,
                             ),
                           ),
-                          Row(
+                          const Row(
                             children: [
                               Icon(
                                 Icons.location_on_outlined,

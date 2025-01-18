@@ -15,7 +15,7 @@ class OnboardPage3 extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
                   ),
@@ -29,9 +29,12 @@ class OnboardPage3 extends StatelessWidget {
                   top: 30,
                   right: 20,
                   child: InkWell(
-                    onTap: ()=> Navigator.push(
-                        context, CupertinoPageRoute(builder: (context) => SignInScreen(),)),
-                    child: Text(
+                    onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const SignInScreen(),
+                        )),
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                           fontSize: 18,
@@ -42,15 +45,15 @@ class OnboardPage3 extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Container(
+            SizedBox(
               width: 309,
               height: 72,
               child: RichText(
                 textAlign: TextAlign.center,
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
                     TextSpan(
                       text: 'People don’t take trips, trips take ',
@@ -74,35 +77,42 @@ class OnboardPage3 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Container(
+            const SizedBox(
               height: 72,
               width: 303,
               child: Text(
                 'At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world',
               ),
             ),
-            SizedBox(height: 100,),
+            const SizedBox(
+              height: 50,
+            ),
             Container(
               height: 56,
               width: 335,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Color(0xff0D6EFD),
+                color: const Color(0xff0D6EFD),
               ),
               child: InkWell(
-                onTap: ()=> Navigator.push(
-                    context, CupertinoPageRoute(builder: (context) => SignInScreen(),)),
-                child: Text('Get Started',
+                onTap: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const SignInScreen(),
+                    )),
+                child: const Text(
+                  'Get Started',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                     fontFamily: 'SF_UI_Display',
-                  ),),
+                  ),
+                ),
               ),
             )
           ],

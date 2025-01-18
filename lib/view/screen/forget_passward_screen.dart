@@ -13,7 +13,7 @@ class ForgetPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         leading: InkWell(
           onTap: () => Get.back(),
-          child: Icon(
+          child: const Icon(
             CupertinoIcons.back,
           ),
         ),
@@ -26,11 +26,11 @@ class ForgetPasswordScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Forgot password',
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
               ),
-              Text(
+              const Text(
                 'Enter your email account to reset  your password',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
@@ -42,7 +42,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   hintFontSize: 14,*/
               ),
               CustomButton(
-                buttonColor: Color(0xff0d6efd),
+                buttonColor: const Color(0xff0d6efd),
                 width: 335,
                 height: 56,
                 title: 'Sign in',

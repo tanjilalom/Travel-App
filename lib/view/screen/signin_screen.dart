@@ -19,7 +19,7 @@ class SignInScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
-          icon: Icon(CupertinoIcons.back, color: Colors.black),
+          icon: const Icon(CupertinoIcons.back, color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -58,7 +58,7 @@ class SignInScreen extends StatelessWidget {
                   title: 'Type Your Email here',
                   controller: emailController,
                 ),
-                const SizedBox(height: 72),
+                const SizedBox(height: 50),
                 InkWell(
                   onTap: () {
                     Get.snackbar('Clicked', 'SignIn Button Clicked');

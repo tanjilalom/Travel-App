@@ -1,15 +1,14 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:travelapp/model/schedule_model.dart';
 
 class ScheduleScreen extends StatelessWidget {
-  ScheduleScreen({super.key});
+  const ScheduleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var _focusDate = DateTime(2024);
+    // var _focusDate = DateTime(2024);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -54,89 +53,87 @@ class ScheduleScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = schedule[index];
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
                       onTap: () {},
-                      child: Container(
-                        child: Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: SizedBox.fromSize(
-                                child: Image.asset(
-                                  itemname.image,
-                                  fit: BoxFit.cover,
-                                  height: 80,
-                                  width: 80,
-                                ),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: SizedBox.fromSize(
+                              child: Image.asset(
+                                itemname.image,
+                                fit: BoxFit.cover,
+                                height: 80,
+                                width: 80,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 22,
-                                left: 12.0,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        CupertinoIcons.calendar,
-                                        size: 16,
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        itemname.date,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13,
-                                          color: Color(0xff7D848D),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    itemname.name,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16,
-                                      color: Color(0xff1B1E28),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 22,
+                              left: 12.0,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      CupertinoIcons.calendar,
+                                      size: 16,
                                     ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.location_on_outlined,
-                                        size: 16,
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      itemname.date,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff7D848D),
                                       ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        itemname.address,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13,
-                                          color: Color(0xff7D848D),
-                                        ),
-                                      ),
-                                    ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  itemname.name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                    color: Color(0xff1B1E28),
                                   ),
-                                  SizedBox(
-                                    height: 18,
-                                  ),
-                                ],
-                              ),
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.location_on_outlined,
+                                      size: 16,
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      itemname.address,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff7D848D),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 18,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   );

@@ -23,16 +23,14 @@ class CustomTextfield extends StatelessWidget {
       cursorColor: Colors.blueAccent,
       controller: controller,
       onTapOutside: (event) => FocusScope.of(context).unfocus(),
-      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
-
+      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
       decoration: InputDecoration(
         counterText: counterText,
-        counterStyle: TextStyle(
-          color: Colors.blue),
+        counterStyle: const TextStyle(color: Colors.blue),
         helperText: helperText,
         hintText: title,
         suffixIcon: Icon(icon),
-        contentPadding: EdgeInsets.fromLTRB(15, 15, 8, 15),
+        contentPadding: const EdgeInsets.fromLTRB(15, 15, 8, 15),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
         ),
