@@ -109,6 +109,7 @@ class OnboardPage1 extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
+                    fontFamily: 'SF_UI_Display',
                   ),
                 ),
               ),
