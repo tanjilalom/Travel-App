@@ -85,7 +85,7 @@ class OnboardPage2 extends StatelessWidget {
               height: 72,
               width: 303,
               child: Text(
-                'At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world',
+                'At Friends tours and travel, we customize reliable and trust worthy educational tours to destinations all over the world',
               ),
             ),
             const SizedBox(
