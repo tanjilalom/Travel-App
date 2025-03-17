@@ -1,15 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:travelapp/view/screen/signin_screen.dart';
 import 'package:travelapp/view/widget/button_widget.dart';
 import 'package:travelapp/view/widget/textfield_widget.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
   @override
+  _SignupScreenState createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool _isPasswordVisible = false;
+
+  @override
   Widget build(BuildContext context) {
-    // Controllers for the text fields
     TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
@@ -33,7 +40,6 @@ class SignupScreen extends StatelessWidget {
                 const Text(
                   'Sign up now',
                   style: TextStyle(
-
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
                   ),
@@ -42,7 +48,6 @@ class SignupScreen extends StatelessWidget {
                 const Text(
                   'Please fill the details and create an account',
                   style: TextStyle(
-
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   ),
@@ -63,12 +68,28 @@ class SignupScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                // Password Field
+                // Password Field with Visibility Toggle
                 CustomTextfield(
                   title: 'Type your Password',
                   controller: passwordController,
-                  icon: CupertinoIcons.eye_slash_fill,
+                  icon: _isPasswordVisible
+                      ? CupertinoIcons.eye_fill
+                      : CupertinoIcons.eye_slash_fill,
                   helperText: 'Password must be 8 characters',
+                  obscureText: !_isPasswordVisible,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _isPasswordVisible
+                          ? CupertinoIcons.eye_fill
+                          : CupertinoIcons.eye_slash_fill,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordVisible = !_isPasswordVisible;
+                      });
+                    },
+                  ),
                 ),
                 const SizedBox(height: 50),
 
@@ -78,14 +99,18 @@ class SignupScreen extends StatelessWidget {
                     'Clicked',
                     'Go to Sign In page to enter the app',
                   ),
-                  child: const CustomButton(
-                    buttonColor: Color(0xff0d6efd),
+                  child: CustomButton(
+                    buttonColor: const Color(0xff0d6efd),
                     width: 335,
                     height: 56,
                     title: 'Sign up',
                     fontColor: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
+                    onTap: () {
+                      Get.snackbar('Success', 'Account created successfully!');
+                      Get.offAll(() => const SignInScreen());
+                    },
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -107,7 +132,6 @@ class SignupScreen extends StatelessWidget {
                       child: const Text(
                         'Sign in',
                         style: TextStyle(
-
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff0d6efd),
@@ -129,14 +153,7 @@ class SignupScreen extends StatelessWidget {
                 const SizedBox(height: 50),
 
                 // Social Media Icons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _buildSocialIcon('assets/icons/google.png'),
-                    _buildSocialIcon('assets/icons/instagram.png'),
-                    _buildSocialIcon('assets/icons/twitter.png'),
-                  ],
-                ),
+                _buildSocialIcons(),
               ],
             ),
           ),
@@ -145,14 +162,25 @@ class SignupScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildSocialIcons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildSocialIcon('assets/icons/google.png'),
+        _buildSocialIcon('assets/icons/instagram.png'),
+        _buildSocialIcon('assets/icons/twitter.png'),
+      ],
+    );
+  }
+
   Widget _buildSocialIcon(String assetPath) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(40),
-      child: Image.asset(
-        assetPath,
-        fit: BoxFit.cover,
-        height: 44,
-        width: 44,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: GestureDetector(
+        onTap: () => Get.snackbar('Social Login', 'Clicked on ${assetPath.split('/').last.split('.').first}'),
+        child: ClipOval(
+          child: Image.asset(assetPath, fit: BoxFit.cover, height: 44, width: 44),
+        ),
       ),
     );
   }

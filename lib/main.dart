@@ -41,10 +41,10 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
   // List of pages corresponding to the BottomNavigationBar items
   final List<Widget> _pages = [
-    HomeScreen(),
-    ScheduleScreen(),
-    PopularPackageScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const ScheduleScreen(),
+    const PopularPackageScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -58,7 +58,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
         unselectedItemColor: Colors.grey,
         selectedFontSize: 12,
         unselectedFontSize: 12,
-        type: BottomNavigationBarType.fixed, // Keeps all items visible
+        type: BottomNavigationBarType.fixed,
+        // Keeps all items visible
         backgroundColor: Colors.white,
         items: const [
           BottomNavigationBarItem(

@@ -75,13 +75,13 @@ class PopularPackageScreen extends StatelessWidget {
                                     top: 20, left: 15, right: 15),
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
                                       flex: 6,
                                       child: Column(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             package.name,
@@ -158,14 +158,14 @@ class PopularPackageScreen extends StatelessWidget {
                                                 width: 50,
                                                 child: Stack(
                                                   alignment:
-                                                      AlignmentDirectional
-                                                          .topStart,
+                                                  AlignmentDirectional
+                                                      .topStart,
                                                   children: [
                                                     Positioned(
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(50),
+                                                        BorderRadius
+                                                            .circular(50),
                                                         child: Image.asset(
                                                           'assets/1.jpg',
                                                           fit: BoxFit.cover,
@@ -178,8 +178,8 @@ class PopularPackageScreen extends StatelessWidget {
                                                       left: 12,
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(50),
+                                                        BorderRadius
+                                                            .circular(50),
                                                         child: Image.asset(
                                                           'assets/2.jpg',
                                                           fit: BoxFit.cover,
@@ -192,8 +192,8 @@ class PopularPackageScreen extends StatelessWidget {
                                                       left: 24,
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(50),
+                                                        BorderRadius
+                                                            .circular(50),
                                                         child: Image.asset(
                                                           'assets/3.jpg',
                                                           fit: BoxFit.cover,
@@ -230,16 +230,16 @@ class PopularPackageScreen extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             color: Colors.blue,
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                            BorderRadius.circular(8),
                                           ),
                                           child: Center(
                                               child: Text(
-                                            "\$${package.price}",
-                                            style: const TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.white),
-                                          )),
+                                                "\$${package.price}",
+                                                style: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white),
+                                              )),
                                         ),
                                       ),
                                     )

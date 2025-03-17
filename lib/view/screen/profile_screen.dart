@@ -18,8 +18,10 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const EditprofileScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const EditprofileScreen()),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xfff7f7f9),
@@ -35,18 +37,21 @@ class ProfileScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Image.asset(
-                    'assets/1.jpg',
-                    fit: BoxFit.cover,
-                    height: 100,
-                    width: 100,
+                InkWell(
+                  onTap: () {
+                    // Add action to change profile picture
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset(
+                      'assets/1.jpg',
+                      fit: BoxFit.cover,
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
+                const SizedBox(height: 12),
                 const Text(
                   'Tanjil Alom',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -58,9 +63,7 @@ class ProfileScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: Color(0xff7d848d)),
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -68,9 +71,10 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 5,
-                          blurStyle: BlurStyle.outer),
+                        color: Colors.grey.shade300,
+                        blurRadius: 5,
+                        blurStyle: BlurStyle.outer,
+                      ),
                     ],
                   ),
                   child: const Row(
@@ -127,9 +131,7 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 30),
                 Container(
                   height: 330,
                   padding: const EdgeInsets.all(16),
@@ -137,20 +139,21 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 5,
-                          blurStyle: BlurStyle.outer),
+                        color: Colors.grey.shade300,
+                        blurRadius: 5,
+                        blurStyle: BlurStyle.outer,
+                      ),
                     ],
                   ),
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: profile.length,
                     itemBuilder: (context, index) {
-                      var itemname = profile[index];
+                      var item = profile[index];
                       return ListTile(
-                        leading: Icon(itemname.icon),
-                        title: Text(itemname.name),
-                        trailing: Icon(itemname.icon2),
+                        leading: Icon(item.icon),
+                        title: Text(item.name),
+                        trailing: Icon(item.icon2),
                         minTileHeight: 60,
                       );
                     },

@@ -8,6 +8,9 @@ class PopularPlacesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -17,9 +20,7 @@ class PopularPlacesScreen extends StatelessWidget {
         centerTitle: true,
         leading: InkWell(
           onTap: () => Get.back(),
-          child: const Icon(
-            CupertinoIcons.back,
-          ),
+          child: const Icon(CupertinoIcons.back),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -36,97 +37,71 @@ class PopularPlacesScreen extends StatelessWidget {
                 color: Color(0xff2D0C57),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 1.4),
-                    mainAxisSpacing: 10.0),
+                  crossAxisCount: 2,
+                  childAspectRatio: screenWidth / (screenHeight / 1.4),
+                  mainAxisSpacing: 10.0,
+                ),
                 itemCount: places.length,
                 itemBuilder: (BuildContext context, int index) {
-                  var itemname = places[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: () => Get.snackbar('Clicked', itemname.name),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color(0xffffffff),
-                          border: Border.all(
-                            color: const Color(0xffD9D0E3),
-                          ),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Expanded(
-                              child: ClipRRect(
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                                // Image border
-                                child: SizedBox.fromSize(
-                                  child: Image.asset(
-                                    itemname.image,
-                                    height: 124,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, right: 12.0),
-                              child: Text(
-                                itemname.name,
-                                style: const TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, right: 12.0),
-                              child: Text(
-                                itemname.address.toString(),
-                                style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff7d848d)),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, right: 12.0),
-                              child: Text(
-                                '\$${itemname.price}/Person',
-                                style: const TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
+                  var place = places[index]; // Corrected variable here
+                  return _buildPlaceItemCard(place); // Pass 'place' instead of 'places'
                 },
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildPlaceItemCard(PopularPlacesItems place) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () => Get.snackbar('Clicked', place.name), // Corrected to 'place.name'
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            border: Border.all(color: const Color(0xffD9D0E3)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    place.image, // Corrected to 'place.image'
+                    height: 124,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              _buildText(place.name, 14, FontWeight.w600),
+              _buildText(place.address, 12, FontWeight.w400, color: const Color(0xff7d848d)),
+              const SizedBox(height: 5),
+              _buildText('\$${place.price}/Person', 12, FontWeight.w400),
+              const SizedBox(height: 10),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildText(String text, double fontSize, FontWeight fontWeight, {Color color = Colors.black}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: fontSize, fontWeight: fontWeight, color: color),
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

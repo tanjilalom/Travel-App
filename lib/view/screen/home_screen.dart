@@ -13,9 +13,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
+            // User Info Section
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -27,9 +26,10 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(22),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.grey.shade100,
-                          blurRadius: 0,
-                          blurStyle: BlurStyle.outer),
+                        color: Colors.grey.shade100,
+                        blurRadius: 0,
+                        blurStyle: BlurStyle.outer,
+                      ),
                     ],
                   ),
                   child: Row(
@@ -43,14 +43,11 @@ class HomeScreen extends StatelessWidget {
                           width: 35,
                         ),
                       ),
-                      const SizedBox(
-                        width: 5,
-                      ),
+                      const SizedBox(width: 5),
                       const Text(
-                        ' Tanjil',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w500),
-                      )
+                        'Tanjil',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                      ),
                     ],
                   ),
                 ),
@@ -63,9 +60,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
+            // Explore Text Section
             SizedBox(
               width: double.infinity,
               height: 100,
@@ -100,9 +96,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
+            // Best Destination Section
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -111,29 +106,24 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),
                 InkWell(
-                  //onTap: ()=> Get.to(PopularPackageScreen()),
                   onTap: () => Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (context) => const PopularPlacesScreen(),
-                      )),
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const PopularPlacesScreen(),
+                    ),
+                  ),
                   child: const Text(
                     'View all',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.blue),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.blue),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 32,
-            ),
+            const SizedBox(height: 32),
+            // Horizontal ListView of destinations
             SizedBox(
               height: 384,
               child: ListView.builder(
-                //separatorBuilder: (BuildContext context, int index) => Divider(),
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) {
@@ -141,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: SizedBox(
                       height: 384,
-                      width: 268,
+                      width: MediaQuery.of(context).size.width * 0.75, // Responsive width
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -149,14 +139,11 @@ class HomeScreen extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: SizedBox.fromSize(
-                                child: Image.asset('assets/1.jpg',
-                                    fit: BoxFit.cover),
+                                child: Image.asset('assets/1.jpg', fit: BoxFit.cover),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                          const SizedBox(height: 10),
                           const Text(
                             'Niladri Reservoir',
                             style: TextStyle(
@@ -182,7 +169,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

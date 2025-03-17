@@ -24,47 +24,57 @@ class _EditprofileScreenState extends State<EditprofileScreen> {
             ),
             InkWell(
               onTap: () => Get.back(),
-              child: const Icon(
-                CupertinoIcons.back,
-              ),
+              child: const Icon(CupertinoIcons.back),
             ),
           ],
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
+      body: const Padding(
+        padding: EdgeInsets.all(20.0),
         child: Center(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.asset(
-                  'assets/1.jpg',
-                  fit: BoxFit.cover,
-                  height: 100,
-                  width: 100,
-                ),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              const Text(
+              ProfilePictureSection(),
+              SizedBox(height: 12),
+              Text(
                 'Tanjil Alom',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
               ),
-              const Text(
+              Text(
                 'Change Profile Picture',
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff0D6EFD)),
               ),
-              const SizedBox(
-                height: 60,
-              ),
+              SizedBox(height: 60),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ProfilePictureSection extends StatelessWidget {
+  const ProfilePictureSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        // Add action to change profile picture
+      },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(50),
+        child: Image.asset(
+          'assets/1.jpg',
+          fit: BoxFit.cover,
+          height: 100,
+          width: 100,
         ),
       ),
     );

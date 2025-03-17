@@ -8,7 +8,10 @@ class ScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var _focusDate = DateTime(2024);
+    // Get screen size for responsive layout
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -19,14 +22,15 @@ class ScheduleScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(screenWidth * 0.05), // responsive padding
         child: Column(
           children: [
+            // EasyDateTimeLine with responsive width
             EasyDateTimeLine(
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {},
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: screenHeight * 0.04), // responsive height
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -46,17 +50,19 @@ class ScheduleScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.03), // responsive height
+            // Expanded ListView for responsive scrolling
             Expanded(
               child: ListView.builder(
                 itemCount: schedule.length,
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = schedule[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: InkWell(
                       onTap: () {},
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
@@ -64,73 +70,65 @@ class ScheduleScreen extends StatelessWidget {
                               child: Image.asset(
                                 itemname.image,
                                 fit: BoxFit.cover,
-                                height: 80,
-                                width: 80,
+                                height: screenHeight * 0.1, // responsive height
+                                width: screenWidth * 0.2, // responsive width
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              top: 22,
-                              left: 12.0,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      CupertinoIcons.calendar,
-                                      size: 16,
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      itemname.date,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 13,
-                                        color: Color(0xff7D848D),
+                          SizedBox(width: screenWidth * 0.05), // responsive spacing
+                          // Column with text and icons
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 12.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        CupertinoIcons.calendar,
+                                        size: 16,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  itemname.name,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    color: Color(0xff1B1E28),
+                                      SizedBox(width: screenWidth * 0.02), // responsive spacing
+                                      Text(
+                                        itemname.date,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13,
+                                          color: Color(0xff7D848D),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.location_on_outlined,
-                                      size: 16,
+                                  SizedBox(height: screenHeight * 0.01), // responsive height
+                                  Text(
+                                    itemname.name,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      color: Color(0xff1B1E28),
                                     ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      itemname.address,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 13,
-                                        color: Color(0xff7D848D),
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.location_on_outlined,
+                                        size: 16,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 18,
-                                ),
-                              ],
+                                      SizedBox(width: screenWidth * 0.02), // responsive spacing
+                                      Text(
+                                        itemname.address,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13,
+                                          color: Color(0xff7D848D),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: screenHeight * 0.02), // responsive height
+                                ],
+                              ),
                             ),
                           ),
                         ],
